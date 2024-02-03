@@ -1,16 +1,82 @@
-### Hi there 👋
+let a = parseFloat(prompt('Introduzca su
+altura en m: '));  // prompt pide al usuario su altura por
+pantalla
 
-<!--
-**Amadrigal27/Amadrigal27** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+    let b = parseFloat(prompt('Introduzca
+su peso en kg: '));  // parseFloat convierte un texto a numerico
+(real)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+    let imc = b / (a*a); 
+ // let declara una variable y le asigna un valor con =
+
+
+    let d = ' '; 
+
+
+    if (imc < 16) {     
+ //ejemplo de condicional anidado
+
+
+        d = 'Infrapeso: Delgadez
+Severa';
+
+
+   
+} else if (16 <= imc && imc <= 16.99)
+{   //  && es un operador lógico equivalente a AND
+
+
+        d = 'Infrapeso: Delgadez
+moderada';    // en d se almacena el resultado correspondiente
+
+
+   
+} else if (17 <= imc && imc <= 18.49)
+{
+
+
+        d = 'Infrapeso: Delgadez
+aceptable';
+
+
+   
+} else if (18.50 <= imc && imc <= 24.99)
+{
+
+
+        d = 'Peso Normal';
+
+
+   
+} else if (25.00 <= imc && imc <= 29.99)
+{
+
+
+        d = 'Sobrepeso';
+
+
+   
+} else if (30.00 <= imc && imc <= 34.99)
+{
+
+
+        d = 'Obeso: Tipo I';
+
+
+   
+} else if (35.00 <= imc && imc <= 40.00)
+{
+
+
+        d = 'Obeso: Tipo II';
+
+
+    } else if (imc > 40.00) {
+
+
+        d = 'Obeso: Tipo III';
+
+
+    }
