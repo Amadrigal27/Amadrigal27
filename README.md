@@ -1,4 +1,4 @@
-#amadrigal27.github.io
+# amadrigal27.github.io
 
     let a = parseFloat(prompt('Introduzca su
 altura en m: '));  // prompt pide al usuario su altura por
