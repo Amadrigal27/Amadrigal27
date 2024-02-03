@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de IMC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #3498db, #2c3e50);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <h1>Calculadora de IMC</h1>
+
+  <label for="altura">Altura en metros:</label>
+  <input type="number" id="altura" placeholder="Ingrese su altura">
+
+  <label for="peso">Peso en kg:</label>
+  <input type="number" id="peso" placeholder="Ingrese su peso">
+
+  <button onclick="calcularIMC()">Calcular IMC</button>
+
+  <p id="resultado">El resultado es: </p>
+</div>
+
+<script>
+  function calcularIMC() {
+    let altura = parseFloat(document.getElementById('altura').value);
+    let peso = parseFloat(document.getElementById('peso').value);
+
+    if (isNaN(altura) || isNaN(peso)) {
+      alert('Por favor, ingrese números válidos para altura y peso');
+      return;
+    }
+
+    let imc = peso / (altura * altura);
+    let resultado = '';
+
+    if (imc < 16) {
+      resultado = 'Infrapeso: Delgadez Severa';
+    } else if (16 <= imc && imc <= 16.99) {
+      resultado = 'Infrapeso: Delgadez Moderada';
+    } else if (17 <= imc && imc <= 18.49) {
+      resultado = 'Infrapeso: Delgadez Aceptable';
+    } else if (18.50 <= imc && imc <= 24.99) {
+      resultado = 'Peso Normal';
+    } else if (25.00 <= imc && imc <= 29.99) {
+      resultado = 'Sobrepeso';
+    } else if (30.00 <= imc && imc <= 34.99) {
+      resultado = 'Obeso: Tipo I';
+    } else if (35.00 <= imc && imc <= 40.00) {
+      resultado = 'Obeso: Tipo II';
+    } else if (imc > 40.00) {
+      resultado = 'Obeso: Tipo III';
+    }
+
+    document.getElementById('resultado').innerText = 'IMC: ' + imc.toFixed(2) + '\nResultado: ' + resultado;
+  }
+</script>
+
+</body>
+</html>
